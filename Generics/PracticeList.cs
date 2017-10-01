@@ -22,5 +22,24 @@ namespace Generics
         {
             return items[index];
         }
+        //create an "Add" method that actually creates a larger array.
+        public void Add(T newItem)
+        {
+            //The new array will have the size of the original plus 1.
+            T[] newItems = new T[items.Length + 1];
+
+            //use a for loop to iterate through the original array assigning it's values to the new array.
+            for (int i = 0; i < items.Length; i++)
+            {
+                //assign the items from the original array to the new array
+                newItems[i] = items[i];
+
+                //add new item to the expanded array (which has a defined length of length + 1).  So length - 1 is the last position in the array and where we will store our new item. 
+                newItems[newItems.Length - 1] = newItem;
+
+                //assign the new array to the old array variable to keep the existing code intact.
+                items = newItems;
+            }
+        }
     }
 }
