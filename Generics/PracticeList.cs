@@ -17,5 +17,10 @@ namespace Generics
         {
             items = new T[0];
         }
+        //add a get method to our generic class. Notice "GetItem" is of type "T" (generic type) and takes "int" index as an input parameter because an array index is of integer type.
+        public T GetItem(int index)
+        {
+            return items[index];
+        }
     }
 }
